@@ -19,8 +19,8 @@
     
         padding: 40px;
     
-        width: 450px;
-        height: 609px;
+        // width: 450px;
+        // height: 609px;
     
         transition: 250ms var(--cubik);
         opacity: 1;
@@ -33,6 +33,13 @@
             0px 1px 1px rgba(0, 0, 0, 0.14),
             0px 2px 1px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+
+        @include mq(mobile-only) {
+            width: 100vw;
+
+        }
+
+
         @include mq(desktop) {
             width: 528px;
             height: 581px;
