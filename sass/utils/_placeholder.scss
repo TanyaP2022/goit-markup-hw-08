@@ -7,15 +7,6 @@
     @include paddings (60px, null, 60px, null);
     background-color: var(--hero-color);
 }
-%header__logo {
-    @include paddings (24px, null, 25px, null);
-
-    font-family: $logo-font;
-    @include fonts (26px, bold, 1.19, 0.03em);
-    color: var(--blue-color);
-    text-decoration: none;
-}
-
 %backdrop {
     position: fixed;
     top: 0;

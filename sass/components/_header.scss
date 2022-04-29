@@ -5,12 +5,24 @@
     position: relative;
 }
 .header__logo {
-    @extend %header__logo;
+    font-family: $logo-font;
+    @include fonts (26px, bold, 1.19, 0.03em);
+    color: var(--blue-color);
+    text-decoration: none;
+
+    @include mq(mobile-only) {
+        @include paddings (16px, null, 16px, null);
+    }
+    @include mq(tablet) {
+        @include paddings (24px, null, 25px, null);
+
+    }
     &:hover,
     &:focus {
         text-decoration: none;
     }
 }
+    
 
 /*другой цвет для лого*/
 .header__span {
@@ -20,6 +32,9 @@
 .body__header {
     border-bottom: 1px solid var(--header-bord-color);
     height: 80px;
+    @include mq(mobile-only) {
+        height: 60px;
+    }
 }
 
 .header__container {
@@ -27,6 +42,7 @@
         position: relative;
         display: flex;
         justify-content: space-between;
+        height: 100%;
     }
     @include mq(tablet) {
         display: flex;
