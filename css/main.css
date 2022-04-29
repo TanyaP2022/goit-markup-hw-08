@@ -1877,6 +1877,7 @@ img {
 @media screen and (max-width: 767.98px) {
   .backdrop-wrapper {
     width: 100vw;
+    height: 100vh;
   }
 }
 
