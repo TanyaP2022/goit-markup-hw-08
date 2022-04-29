@@ -1,0 +1,58 @@
+@import "../utils/placeholder";
+@import "../utils/mixins";
+/*портфолио*/
+.filter {
+    align-self: center;
+/*скрыть заголовок начало*/
+.portfolio {
+    display: none;
+}
+/*скрыть заголовок конец*/
+
+.portfolio-btn {
+    display: flex;
+    @include margins (0px, null, 0px, auto);
+    padding-left: 0px;
+    justify-content: center;
+
+    @include mq(mobile-only) {
+        margin-bottom: 25px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    @include mq(tablet-only) {
+        margin-bottom: 30px;
+    }
+    
+    &-list {
+        background-color: var(--btc-color);
+        margin-right: 8px;
+        &:nth-child(5n) {
+            margin-right: 0px;
+        }
+        @include mq(mobile-only) {
+            margin-bottom: 15px;
+        }
+    }
+    &-item {
+        padding: 6px 22px;
+        font-family: $portfolio-font;
+        font-style: normal;
+        @include fonts (16px, 500, 1.62, 0.03em);
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        height: 38px;
+        border-radius: 4px;
+
+        transition-property: background-color, color;
+        transition-duration: 250ms;
+        transition-timing-function: var(--cubik);
+        &:hover,
+        &:focus {
+            color: var(--white-color);
+            background-color: var(--blue-color);
+        }
+    }
+}
+}

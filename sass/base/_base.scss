@@ -1,0 +1,79 @@
+@import "../utils/mixins";
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+/*общие стили*/
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+}
+ol,
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.link {
+    list-style: none;
+}
+.container {
+    @include margins (null, auto, null, auto);
+    @include paddings (null, 15px, null, 15px);
+
+    @media screen and (min-width:480px) {
+        // min-width: 320px;
+        // max-width: 480px;
+        width: 480px;
+    }
+    @media screen and (min-width:768px) {
+        width: 768px;
+    }
+    @media screen and (min-width:1200px) {
+        width: 1200px;
+    }
+
+    // width: 1200px;
+}
+
+.section {
+    @include paddings (60px, null, 60px, null);
+    @include mq(desktop) {
+        @include paddings (94px, null, 94px, null);
+    }
+}
+/*клас для боди*/
+
+.body {
+    margin: 0;
+    font-family:$body-font;
+    @include fonts (14px, null, null, 0.03em);
+    color: var(--brend-color);
+    background-color: var(--white-color);
+}
+
+.modal-wrapper,
+.modal-form-messags,
+.modal-form,
+.modal-label:focus-visible,
+.modal-text,
+.modal-form-label,
+.modal-form-input,
+.modal-icons {
+    outline: none
+}

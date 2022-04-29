@@ -1,0 +1,109 @@
+@import "../utils/placeholder";
+@import "../utils/mixins";
+.portfolio-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline-start: 0pt;
+    @include margins (50px, null, 0px, null);
+    @include mq(mobile-only) {
+        margin-top: 0;
+    }
+    @include mq(tablet-only) {
+        margin: -15px;
+    }
+    &-list {
+        @include margins (0px, 30px, 30px, 0px);
+        background-color: var(--white-color);
+    
+        transition-property: box-shadow;
+        transition-duration: 250ms;
+        transition-timing-function: var(--cubik);
+        
+        &:hover,
+        &:focus {
+            box-shadow: 
+                0px 1px 1px rgba(0, 0, 0, 0.12),
+                0px 4px 4px rgba(0, 0, 0, 0.06),
+                1px 4px 6px rgba(0, 0, 0, 0.16);
+        }
+        @include mq(mobile-only) {
+            margin-right: 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @include mq(tablet-only) {
+            margin: 15px;
+            width: calc((100% / 2 - 2 * 15px));
+        }
+        @include mq(desktop) {
+            &:nth-child(3n) {
+                margin-right: 0px;
+            }
+            
+            &:nth-child(n + 7) {
+                margin-bottom: 0px;
+            }
+
+        }
+
+    }
+    &-link {
+        display: block;
+        cursor: pointer;
+    
+        position: relative;
+    
+        transition-property: box-shadow, border-radius;
+        transition-duration: 250ms;
+        transition-timing-function: var(--cubik);
+        &:hover,
+        &:focus {
+            box-shadow: 
+                0px 3px 1px rgba(0, 0, 0, 0.1),
+                0px 1px 2px rgba(0, 0, 0, 0.08),
+                0px 2px 2px rgba(0, 0, 0, 0.12);
+            border-radius: 4px;
+        }
+        &:hover .portf-modal {
+            transform: translateY(0);
+        }
+        @include mq(tablet-only) {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+    &-link,
+    &-list,
+    &-name,
+    &-title {
+        text-decoration: none;
+    }
+    &-photo {
+        border: none;
+        @include mq(mobile-only) {
+            width: 100%;
+        }
+    } 
+    &-cart {
+        border-right: 1px solid var(--portfolio--bord-color);
+        border-bottom: 1px solid var(--portfolio--bord-color);
+        border-left: 1px solid var(--portfolio--bord-color);
+
+        @include paddings (20px, 24px, 20px, 24px);
+
+        @include mq(tablet-only) {
+            flex-grow: 1;
+        }
+    }
+    &-name {
+        @include fonts (18px, bold, 2, 0.06em);
+        color: var(--style-color);
+    }
+    &-title {
+        margin-top: 4px;
+        @include fonts (16px, null, 1.87, null);
+        color: var(--brend-color);
+    }
+}

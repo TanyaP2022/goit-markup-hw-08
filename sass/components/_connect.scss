@@ -1,0 +1,48 @@
+@import "../utils/mixins";
+.connect__item {
+    @include mq(tablet) {
+        @include margins (null, 0px, 10px, 0px);
+        &:nth-child(2) {
+            margin-bottom: 0;
+        }
+    }
+    @include mq(desktop) {
+        @include margins (null, 0px, 0px, 30px);
+    
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+}
+.connect__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    @include fonts (14px, 500, 1.14, 0.02em);
+    color: var(--brend-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubik);
+    &:hover,
+    &:focus {
+        color: var(--blue-color);
+    }
+}
+.connect__icons-mail,
+.connect__icons-tel {
+    margin-right: 10px;
+    fill: currentColor;
+}
+.connect__icons-mail {
+    @include mq(tablet-only) {
+        width:14px;
+        height:10px;
+    }
+}
+.connect__icons-tel {
+    @include mq(tablet-only) {
+        width:10px;
+        height:14px;
+    }
+}

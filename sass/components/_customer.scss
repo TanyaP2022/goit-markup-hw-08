@@ -1,0 +1,78 @@
+@import "../utils/mixins";
+
+.customer-hed {
+    @include fonts (36px, bold, 1.17, 0.03em);
+    text-align: center;
+    color: var(--style-color);
+    @include mq(notDesktop) {
+        @include fonts (28px, 700, 1.17, 0.03em);
+        margin-bottom: 30px;
+    }
+}
+
+.customer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    @include mq(notDesktop) {
+        margin:-15px;
+    }
+}
+
+.customer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icons-social);
+    border-radius: 4px;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubik);
+    
+    &:hover .customer-icons,
+    &:focus .customer-icons {
+        fill: var(--blue-color);
+    }
+    &:hover,
+    &:focus {
+        border-color: var(--blue-color);
+    }
+    @include mq(mobile-only){
+        width: calc((100% / 2 - 2 * 15px));
+        margin: 15px;
+    }
+    @include mq(tablet) {
+        width: calc((100% / 3 - 2 * 15px));
+        margin: 15px;
+    }
+    @include mq(desktop) {
+        width: calc((100% / 6 - 2 * 15px));
+        margin: 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    
+}
+
+.customer-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: currentColor;
+    cursor: pointer;
+}
+
+.customer-icons {
+    fill: var(--icons-social);
+    transition-property: fill;
+    transition-duration: 2550ms;
+    transition-timing-function: var(--cubik);
+}

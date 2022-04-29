@@ -1,0 +1,79 @@
+@import "../utils/mixins";
+/*скрыть заголовок*/
+.about-hero {
+    display: none;
+}
+
+/*чем занимаемся*/
+.about {
+    &-list {
+        
+        @include margins (0px, null, 0px, null);
+        display: flex;
+        flex-wrap: wrap;
+        padding-inline-start: 0pt;
+        // @include mq(desktop){
+            
+        // }
+    }
+    &-item {
+        @include mq(mobile) {
+            width: 450px;
+            @include margins (0px, 0px, 30px, 0px);
+        }
+        @include mq(tablet) {
+            width: 354px;
+            @include margins (0px, 30px, 30px, 0px);
+       }
+        @include mq(tablet-only) {
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+            &:nth-child(n+3) {
+                margin-bottom: 0;
+            }
+        }
+        @include mq(desktop){
+            width: 270px;
+            @include margins (null, 30px, 0px, 0px);
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+    &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 30px;
+
+        background: var(--btn-color);
+        border-radius: 4px;
+
+        height: 120px;
+        @include mq(mobile){
+            width: 450px;
+        }
+        @include mq(tablet) {
+            width: 354px
+        }
+        @include mq(desktop) {
+            width: 270px;
+        }
+
+    }
+    &-title {
+        @include fonts (14px, bold, 1.14, null);
+        text-transform: uppercase;
+        color: var(--style-color);
+        @include mq(mobile-only){
+            text-align: center;
+        }
+    }
+    &-subtitle {
+        margin-top: 10px;
+        line-height: 1.71;
+        color: var(--brend-color);
+    }
+}

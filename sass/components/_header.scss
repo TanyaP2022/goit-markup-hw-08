@@ -1,0 +1,115 @@
+@import "../utils/placeholder";
+@import "../utils/mixins";
+/*лого*/
+.header {
+    position: relative;
+}
+.header__logo {
+    @extend %header__logo;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+/*другой цвет для лого*/
+.header__span {
+    color: var(--black-color);
+}
+/*стили для навигации*/
+.body__header {
+    border-bottom: 1px solid var(--header-bord-color);
+    height: 80px;
+}
+
+.header__container {
+    @include mq(mobile-only) {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    @include mq(tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @include mq(desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+.header__nav {
+    @include fonts (null, 500, 1.14, 0.02em);
+    height: 100%;
+
+    @include mq(mobile-only) {
+        display: none;
+    }
+    @include mq(tablet) {
+        display: block;
+    }
+    @include mq(desktop) {
+        display: block;
+        margin-left: 93px;
+        margin-right: 0;
+    }
+}
+
+.header__connect {
+    @include mq(mobile-only) {
+        display: none;
+    }
+    @include mq(tablet) {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        @include margins (null, null, null, null);
+        margin-left: auto;
+        padding-left: 0px;
+    }
+    @include mq(desktop) {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        @include margins (null, null, null, null);
+        margin-left: auto;
+        padding-left: 0px;
+    }
+}
+.header__btn{
+    @include mq(mobile-only) {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        z-index: 1;
+        &.is-active .header__icon-Menu{
+            opacity: 1;
+        }
+        &.is-active .header__icon-MenuClose {
+            opacity: 0;
+        }
+        & .header__icon-Menu {
+            opacity: 0;
+        }
+        & .header__icon-MenuClose {
+            opacity: 1;
+        }
+        &:hover .header__icon-Menu,
+        &:focus .header__icon-Menu,
+        &:hover .header__icon-MenuClose,
+        &:focus .header__icon-MenuClose {
+            fill: var(--blue-color)
+        }
+    }
+    @include mq(tablet) {
+        display: none;
+    }
+}

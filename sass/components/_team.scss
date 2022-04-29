@@ -1,0 +1,117 @@
+@import "../utils/placeholder";
+@import "../utils/mixins";
+/*наша команда*/
+.team {
+    @extend %team;
+        &-hero {
+            @include fonts (36px, bold, 1.17, null);
+        text-align: center;
+        color: var(--style-color);
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include mq(mobile-only) {
+            @include margins (30px, null, 0px, null);
+        }
+        @include mq(tablet) {
+            @include margins (30px, -30px, -30px, 0px);
+        }
+        @include mq(desktop) {
+            @include margins (50px, null, 0px, null);
+        }
+    }
+    &-item {
+        width: 270px;
+        margin-right: 30px;
+        background-color: var(--white-color);
+    
+        box-shadow:
+            0px 1px 3px rgba(0, 0, 0, 0.12),
+            0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+        @include mq(mobile-only) {
+            width: 450px;
+            @include margins (0px, 0px, 30px, 0px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @include mq(tablet) {
+            width: 354px;
+            @include margins (0px, 30px, 30px, 0px);
+            &:nth-child(n +3) {
+                margin-bottom: 0;
+            }
+        }
+        @include mq(desktop) {
+            width: 270px;
+            margin-bottom: 0;
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+    &-name {
+        @include fonts (16px, 500, 1.19, null);
+        text-align: center;
+        color: var(--style-color);
+    }
+    &-position {
+        @include margins (10px, null, 16px, null);
+        @include fonts (16px, null, 1.19, null);
+        text-align: center;
+        color: var(--brend-color);
+    }
+    &-photo {
+        min-width: 100%;
+    }
+    &-card {
+        @include paddings (30px, null, 30px, null);
+        border: 1px solid var(--portfolio--bord-color);
+    }
+    &-icon-social {
+        display: flex;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+        &-item {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            list-style-type: none;
+            display: flex;
+            padding-left: 0;
+            justify-content: center;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+        &-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--white-color);
+            fill: var(--icons-social);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+        
+            transition-property: background-color;
+            transition-duration: 250ms;
+            transition-timing-function: var(--cubik);
+            &:hover,
+            &:focus {
+                border-radius: 50%;
+                background-color: var(--blue-color);
+                fill: var(--white-color);
+            }
+        }
+        &-icons {
+            list-style-type: none;
+        }
+    }
+}
+

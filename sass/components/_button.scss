@@ -1,0 +1,24 @@
+
+@import "../utils/mixins";
+.hero-btn {
+    /* настройки внутри кнопки */
+
+    height: 50px;
+    @include fonts (16px, bold, 1.87, 0.06em);
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    cursor: pointer;
+
+
+    @include mq(desktop) {
+        display: flex;
+        padding: 10px 32px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    
+}

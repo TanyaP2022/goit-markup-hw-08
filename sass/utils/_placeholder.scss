@@ -1,0 +1,40 @@
+@import "../utils/mixins";
+%box {
+    padding-top: 0px;
+}
+
+%footer {
+    @include paddings (60px, null, 60px, null);
+    background-color: var(--hero-color);
+}
+%header__logo {
+    @include paddings (24px, null, 25px, null);
+
+    font-family: $logo-font;
+    @include fonts (26px, bold, 1.19, 0.03em);
+    color: var(--blue-color);
+    text-decoration: none;
+}
+
+%backdrop {
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    width: 100vw;
+    height: 100vh;
+
+    transform: translateX(-50%);
+
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+
+    transition: opacity 250ms var(--cubik),
+    visibility 250ms var(--cubik);
+}
+
+%team {
+    background-color: var(--btn-color);
+}

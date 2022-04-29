@@ -1,0 +1,111 @@
+@import "../utils/mixins";
+
+/*стили для героя*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px;
+    max-width: 1600px;
+    width: 100vw;
+    height: 400px;
+    margin: auto;
+    @include paddings (118px, null, 118px, null);
+    background-color: var(--hero-color);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: 
+        linear-gradient(to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+        url(../images/hero/hero_sm.png);
+    background-image:
+        linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+        -webkit-image-set( url(../images/hero/hero_sm.webp) x1 ); 
+    @include mq(retina) {
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url(../images/hero/hero_sm@2x.png);
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            -webkit-image-set url(../images/hero/hero_sm@2x.webp) x2;        
+    }
+    
+    @include mq(tablet) {
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url(../images/hero/hero_mg.png);
+        background-image: 
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            -webkit-image-set (url(../images/hero/hero_mg.webp) x1);
+        @include mq(retina) {
+            background-image:
+                linear-gradient(to right,
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)),
+                url(../images/hero/hero_mg@2x.png);
+            background-image: 
+                linear-gradient(to right,
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)),
+                -webkit-image-set (url(../images/hero/hero_mg@2x.webp) x2);
+        }
+        
+    }
+
+    @include mq(desktop) {
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url(../images/hero/hero_lg.png);
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            -webkit-image-set (url(../images/hero/hero_lg.webp) x1);
+    
+        @include mq(retina) {
+            background-image:
+                linear-gradient(to right,
+                    rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)),
+                url(../images/hero/hero_lg@2x.png);
+            background-image: 
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+                -webkit-image-set (url(../images/hero/hero_lg@2x.webp) x2);
+        }
+        height: 600px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        // padding-left: auto;
+    }
+}
+
+.hero-title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: var(--white-color);
+
+    @include mq(mobile) {
+        @include fonts (26px, 900, 1.62, 0.06em);
+    }
+    @include mq(desktop) {
+        @include fonts (44px, null, null, 0.06em);
+    }
+}
