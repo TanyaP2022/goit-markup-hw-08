@@ -6,16 +6,22 @@
 }
 .header__logo {
     font-family: $logo-font;
-    @include fonts (26px, bold, 1.19, 0.03em);
+    
     color: var(--blue-color);
     text-decoration: none;
 
     @include mq(mobile-only) {
         @include paddings (16px, null, 16px, null);
+        @include fonts (24px, 700, 1.16, 0.03em);
     }
     @include mq(tablet) {
+        @include paddings (26px, null, 26px, null);
+        @include fonts (24px, 700, 1.16, 0.03em);
+        
+    }
+    @include mq(desktop) {
         @include paddings (24px, null, 25px, null);
-
+        @include fonts (26px, bold, 1.19, 0.03em);
     }
     &:hover,
     &:focus {

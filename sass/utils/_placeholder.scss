@@ -24,6 +24,7 @@
 
     transition: opacity 250ms var(--cubik),
     visibility 250ms var(--cubik);
+    z-index: 2;
 }
 
 %team {
